@@ -175,8 +175,6 @@ public class StateMachine extends StateMachineBase {
 
         devicesCnt = new Container(new BoxLayout(BoxLayout.Y_AXIS));
         f.add(devicesCnt);
-        f.show();
-
     }
 
     void updateUI() throws JSONException {
