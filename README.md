@@ -1,3 +1,5 @@
+# EmbeddedCN1
+
 ParseWorkshop 
 https://github.com/ahmedengu/ParseWorkshop
 
@@ -20,8 +22,8 @@ Content-Type: application/json
 
 Plugins
 
-https://github.com/codenameone/codenameone-google-maps
-https://github.com/shannah/CN1JSON
-https://github.com/sidiabale/parse4cn1
-https://github.com/chen-fishbein/sensors-codenameone
-https://github.com/chen-fishbein/bluetoothle-codenameone
+* https://github.com/codenameone/codenameone-google-maps
+* https://github.com/shannah/CN1JSON
+* https://github.com/sidiabale/parse4cn1
+* https://github.com/chen-fishbein/sensors-codenameone
+* https://github.com/chen-fishbein/bluetoothle-codenameone
