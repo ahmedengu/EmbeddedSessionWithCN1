@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="Sensors" cloudDestinationProperty="Sensors" layout="BoxLayout" boxLayoutAxis="Y" title="Sensors" >
+  <component type="Label" name="Label" cloudDestinationProperty="Label" text="gyroscope " >
+  </component>
+  <component type="Label" name="Gyroscope" cloudDestinationProperty="Gyroscope" text="" >
+  </component>
+  <component type="Label" name="Label2" cloudDestinationProperty="Label2" text="accelerometer " >
+  </component>
+  <component type="Label" name="Accelerometer" cloudDestinationProperty="Accelerometer" text="" >
+  </component>
+  <component type="Label" name="Label4" cloudDestinationProperty="Label4" text="magnetic" >
+  </component>
+  <component type="Label" name="Magnetic" cloudDestinationProperty="Magnetic" text="" >
+  </component>
+  <component type="Button" name="sendToParse" cloudDestinationProperty="sendToParse" text="Send to parse" >
+  </component>
+</component>
