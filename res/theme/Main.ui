@@ -9,6 +9,4 @@
   </component>
   <component type="Button" name="Button2" cloudDestinationProperty="Button2" commandName="GPS" commandId="3" commandAction="GPS" commandBack="false" text="GPS" >
   </component>
-  <component type="Button" name="Button3" cloudDestinationProperty="Button3" commandName="Serial" commandId="4" commandAction="Serial" commandBack="false" text="Serial" >
-  </component>
 </component>

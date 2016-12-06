@@ -3,11 +3,15 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/lib/impl/cls" />
       <root url="jar://$PROJECT_DIR$/lib/CodenameOne.jar!/" />
+      <root url="file://$PROJECT_DIR$/native/internal_tmp" />
+      <root url="jar://$PROJECT_DIR$/native/javase/com/rxtx-2.1.7.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/lib/impl/stubs" />
       <root url="jar://$PROJECT_DIR$/lib/CodenameOne_SRC.zip!/" />
+      <root url="file://$PROJECT_DIR$/native/javase" />
     </SOURCES>
+    <jarDirectory url="jar://$PROJECT_DIR$/native/javase/com/rxtx-2.1.7.jar!/" recursive="false" />
   </library>
 </component>

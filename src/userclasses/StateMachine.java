@@ -14,6 +14,8 @@ import com.codename1.components.FloatingActionButton;
 import com.codename1.components.MultiButton;
 import com.codename1.components.ToastBar;
 import com.codename1.googlemaps.MapContainer;
+import com.codename1.io.ConnectionRequest;
+import com.codename1.io.NetworkEvent;
 import com.codename1.location.Location;
 import com.codename1.location.LocationManager;
 import com.codename1.maps.Coord;
@@ -51,6 +53,7 @@ public class StateMachine extends StateMachineBase {
      * the constructor/class scope to avoid race conditions
      */
     protected void initVars(Resources res) {
+        // initialize the parse backend endpoint , appID , Client Key
         Parse.initialize("http://parseapi.back4app.com", "GcRAxCp4DG6eviyuox53OpCE2g4luOVqYM3MYepe", "kVlf0nHTVzt8GjhAyuEtXkhAk345bXTHnr1CXfwN");
     }
 
@@ -178,6 +181,13 @@ public class StateMachine extends StateMachineBase {
     }
 
     void updateUI() throws JSONException {
+        ConnectionRequest connectionRequest = new ConnectionRequest();
+        connectionRequest.addResponseCodeListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+
+            }
+        });
         devicesCnt.removeAll();
         Set keys = devices.keySet();
         for (Iterator iterator = keys.iterator(); iterator.hasNext(); ) {
@@ -226,14 +236,12 @@ public class StateMachine extends StateMachineBase {
         fab.bindFabToContainer(f.getContentPane());
     }
 
-    @Override
-    protected void beforeSerial(Form f) {
-
-    }
 
     @Override
     protected void onSensors_SendToParseAction(Component c, ActionEvent event) {
+        // create a row in table sensor
         ParseObject object = ParseObject.create("Sensor");
+        // add data to columns
         object.put("gyroscopeX", gyroscopeX);
         object.put("gyroscopeY", gyroscopeY);
         object.put("gyroscopeX", gyroscopeZ);

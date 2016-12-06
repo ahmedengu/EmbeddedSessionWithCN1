@@ -66,7 +66,6 @@
     <image name="OKGR.borderTopR_1.png" type="multi"  />
     <image name="round.png" type="multi"  />
     <ui name="Sensors" />
-    <ui name="Serial" />
     <image name="sliderBlueCenter.png" type="multi"  />
     <image name="sliderBlueLeft.png" type="multi"  />
     <image name="sliderBlueRight.png" type="multi"  />

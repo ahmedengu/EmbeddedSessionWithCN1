@@ -270,18 +270,6 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.Button findButton3(Component root) {
-        return (com.codename1.ui.Button)findByName("Button3", root);
-    }
-
-    public com.codename1.ui.Button findButton3() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("Button3", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("Button3", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
     public com.codename1.ui.Button findButton2(Component root) {
         return (com.codename1.ui.Button)findByName("Button2", root);
     }
@@ -321,7 +309,6 @@ public abstract class StateMachineBase extends UIBuilder {
     public static final int COMMAND_MainGPS = 3;
     public static final int COMMAND_MainSensors = 1;
     public static final int COMMAND_MainBluetooth = 2;
-    public static final int COMMAND_MainSerial = 4;
 
     protected boolean onMainGPS() {
         return false;
@@ -332,10 +319,6 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
     protected boolean onMainBluetooth() {
-        return false;
-    }
-
-    protected boolean onMainSerial() {
         return false;
     }
 
@@ -357,13 +340,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
             case COMMAND_MainBluetooth:
                 if(onMainBluetooth()) {
-                    ev.consume();
-                    return;
-                }
-                break;
-
-            case COMMAND_MainSerial:
-                if(onMainSerial()) {
                     ev.consume();
                     return;
                 }
@@ -400,12 +376,6 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("Serial".equals(f.getName())) {
-            exitSerial(f);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
         if("Main".equals(f.getName())) {
             exitMain(f);
             aboutToShowThisContainer = null;
@@ -429,10 +399,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
 
     protected void exitUser(Form f) {
-    }
-
-
-    protected void exitSerial(Form f) {
     }
 
 
@@ -465,12 +431,6 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("Serial".equals(f.getName())) {
-            beforeSerial(f);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
         if("Main".equals(f.getName())) {
             beforeMain(f);
             aboutToShowThisContainer = null;
@@ -494,10 +454,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
 
     protected void beforeUser(Form f) {
-    }
-
-
-    protected void beforeSerial(Form f) {
     }
 
 
@@ -530,12 +486,6 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("Serial".equals(c.getName())) {
-            beforeContainerSerial(c);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
         if("Main".equals(c.getName())) {
             beforeContainerMain(c);
             aboutToShowThisContainer = null;
@@ -559,10 +509,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
 
     protected void beforeContainerUser(Container c) {
-    }
-
-
-    protected void beforeContainerSerial(Container c) {
     }
 
 
@@ -594,12 +540,6 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("Serial".equals(f.getName())) {
-            postSerial(f);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
         if("Main".equals(f.getName())) {
             postMain(f);
             aboutToShowThisContainer = null;
@@ -623,10 +563,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
 
     protected void postUser(Form f) {
-    }
-
-
-    protected void postSerial(Form f) {
     }
 
 
@@ -658,12 +594,6 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("Serial".equals(c.getName())) {
-            postContainerSerial(c);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
         if("Main".equals(c.getName())) {
             postContainerMain(c);
             aboutToShowThisContainer = null;
@@ -687,10 +617,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
 
     protected void postContainerUser(Container c) {
-    }
-
-
-    protected void postContainerSerial(Container c) {
     }
 
 
@@ -722,12 +648,6 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("Serial".equals(rootName)) {
-            onCreateSerial();
-            aboutToShowThisContainer = null;
-            return;
-        }
-
         if("Main".equals(rootName)) {
             onCreateMain();
             aboutToShowThisContainer = null;
@@ -751,10 +671,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
 
     protected void onCreateUser() {
-    }
-
-
-    protected void onCreateSerial() {
     }
 
 
@@ -787,12 +703,6 @@ public abstract class StateMachineBase extends UIBuilder {
             return h;
         }
 
-        if("Serial".equals(f.getName())) {
-            getStateSerial(f, h);
-            aboutToShowThisContainer = null;
-            return h;
-        }
-
         if("Main".equals(f.getName())) {
             getStateMain(f, h);
             aboutToShowThisContainer = null;
@@ -816,10 +726,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
 
     protected void getStateUser(Form f, Hashtable h) {
-    }
-
-
-    protected void getStateSerial(Form f, Hashtable h) {
     }
 
 
@@ -852,12 +758,6 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
-        if("Serial".equals(f.getName())) {
-            setStateSerial(f, state);
-            aboutToShowThisContainer = null;
-            return;
-        }
-
         if("Main".equals(f.getName())) {
             setStateMain(f, state);
             aboutToShowThisContainer = null;
@@ -881,10 +781,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
 
     protected void setStateUser(Form f, Hashtable state) {
-    }
-
-
-    protected void setStateSerial(Form f, Hashtable state) {
     }
 
 
@@ -941,10 +837,6 @@ public abstract class StateMachineBase extends UIBuilder {
                 onMain_Button2Action(c, event);
                 return;
             }
-            if("Button3".equals(c.getName())) {
-                onMain_Button3Action(c, event);
-                return;
-            }
         }
     }
 
@@ -973,9 +865,6 @@ public abstract class StateMachineBase extends UIBuilder {
       }
 
       protected void onMain_Button2Action(Component c, ActionEvent event) {
-      }
-
-      protected void onMain_Button3Action(Component c, ActionEvent event) {
       }
 
 }
